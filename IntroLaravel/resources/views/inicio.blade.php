@@ -24,8 +24,8 @@
 <h1 class="display-1"> Bienvenido Turista! </h1>
 <p> Presiona el botón para iniciar... </p>
 
-<a href="{{ route('rutaformulario') }}" class="btn btn-primary"> Ir al registro </a>
-{{-- <a href="/formulario" class="btn btn-danger"> Ir al registro </a> --}}
+{{-- <a href="{{ route('rutaformulario') }}" class="btn btn-primary"> Ir al registro </a> --}}
+<a href="{{route('rutaform')}}" class="btn btn-primary"> Ir al registro </a>
 
 </div>
 
