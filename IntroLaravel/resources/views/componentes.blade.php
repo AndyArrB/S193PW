@@ -11,5 +11,7 @@
     Soy el contenido del segundo
 </x-Card>
     
+<x-Alert tipo="danger"> Hola </x-Alert>
+<x-Alert tipo="success"> Es lima  </x-Alert>
     
 @endsection
