@@ -25,11 +25,11 @@ class ConvertidorControlador extends Controller
             break;
         
         case 'GB_a_TB':
-            $resultado = $cantidad /1024 . ' Terabytes';
+            $resultado = $cantidad /1000 . ' Terabytes';
             break;
 
         case 'TB_a_GB':
-            $resultado = $cantidad * 1024 . ' Gigabytes';
+            $resultado = $cantidad * 1000 . ' Gigabytes';
             break;
         
         default:
