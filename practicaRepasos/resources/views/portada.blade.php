@@ -18,7 +18,11 @@
           <li class="list-group-item">Materia: Programación web</li>
           <li class="list-group-item">Profesor: Iván Isay Guerra López</li>
         </ul>
+
+        <a href="{{route('rutarepaso')}}" class="btn btn-info fs-4"> Repaso 1 </a>
       </div>
+
+
 
 </body>
 </html>
