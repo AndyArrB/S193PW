@@ -22,18 +22,12 @@ class ControladorVistas extends Controller
 
     public function procesarCliente(Request $peticion) {
 
-        //Respuesta de redirección
-        /* return redirect('/'); */
-        
-        // Respuestas de redirección usando el nombre de la ruta
-        /* return redirect()->route('rutaclientes'); */
-
-        //Redirección al origen de la peticion
-       /*  return back(); */
-
-       //Redirección con variables adjuntas
-      /*  $id = [['usuario'=>1], ['usuario'=>2]];
-       return view('formulario', compact('id')); */
+        $validacion=$peticion->validate([
+            'txtnombre'=> 'required |min:4|max:20',
+            'txtapellido'=> 'required',
+            'txtcorreo'=> 'required',
+            'txttelefono'=> 'required |numeric'
+        ]);
 
        //Redirección con un mensaje flsh en session
        $usuario=$peticion->input('txtnombre');
