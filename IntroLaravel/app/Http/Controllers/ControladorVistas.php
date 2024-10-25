@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\validadorCliente;
 
 class ControladorVistas extends Controller
 {
@@ -20,14 +21,7 @@ class ControladorVistas extends Controller
         return view('clientes');
     }
 
-    public function procesarCliente(Request $peticion) {
-
-        $validacion=$peticion->validate([
-            'txtnombre'=> 'required |min:4|max:20',
-            'txtapellido'=> 'required',
-            'txtcorreo'=> 'required',
-            'txttelefono'=> 'required |numeric'
-        ]);
+    public function procesarCliente(validadorCliente $peticion) {
 
        //Redirección con un mensaje flsh en session
        $usuario=$peticion->input('txtnombre');
