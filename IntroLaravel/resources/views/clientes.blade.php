@@ -15,8 +15,8 @@
             </div>
 
             <div class="card-footer text-muted">
-                <button class="btn btn-warning btm-sm" type="submit"> Actualizar </button>
-                <button class="btn btn-danger btn-sm" type="submit"> Eliminar </button>
+                <button class="btn btn-warning btm-sm" type="submit"> {{ __('Actualizar')}} </button>
+                <button class="btn btn-danger btn-sm" type="submit"> {{ __('Eliminar')}} </button>
             </div>
         </div>
     </div>

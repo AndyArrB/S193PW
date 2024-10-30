@@ -21,11 +21,11 @@
 
 <div class="d-flex flex-column justify-content-center align-items-center text-center full-height">
     
-<h1 class="display-1"> Bienvenido Turista! </h1>
-<p> Presiona el botón para iniciar... </p>
+<h1 class="display-1"> {{ __('Bienvenido Turista!') }} </h1>
+<p> {{ __('Presiona el botón para comenzar...') }} </p>
 
 {{-- <a href="{{ route('rutaformulario') }}" class="btn btn-primary"> Ir al registro </a> --}}
-<a href="{{route('rutaform')}}" class="btn btn-primary"> Ir al registro </a>
+<a href="{{route('rutaform')}}" class="btn btn-primary"> {{ __('Ir al registro') }} </a>
 
 </div>
 

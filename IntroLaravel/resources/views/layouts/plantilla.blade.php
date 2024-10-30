@@ -14,7 +14,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{{route('rutainicio')}}">Turista sin Maps</a>
+            <a class="navbar-brand" href="{{route('rutainicio')}}">{{ __('Turista sin Maps') }}</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -24,11 +24,11 @@
                 <ul class="navbar-nav">
 
                     <li class="nav-item">
-                        <a href="{{route('rutaform')}}" class="nav-link {{request()->routeIs('rutaform')?'text-warning':''}}" aria-current="page">Registro clientes</a>
+                        <a href="{{route('rutaform')}}" class="nav-link {{request()->routeIs('rutaform')?'text-warning':''}}" aria-current="page"> {{ __('Registro clientes') }} </a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="{{route('rutaclientes')}}" class="nav-link {{request()->routeIs('rutaclientes')?'text-success':''}}">Consulta clientes</a>
+                        <a href="{{route('rutaclientes')}}" class="nav-link {{request()->routeIs('rutaclientes')?'text-success':''}}">{{ __('Consulta clientes') }}</a>
                     </li>
                 </ul>
             </div>
