@@ -27,7 +27,7 @@
 
         <div class="container-fluid">
 
-            <a class="navbar-brand text-light text-uppercase" href="{{ route('rutainicio') }}">Biblioteca</a>
+            <a class="navbar-brand text-light text-uppercase" href="{{ route('rutainicio') }}"> {{ __('Biblioteca')}} </a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navbarSupportedContent"
                 aria-expanded="false" aria-label="Toggle navigation">
@@ -38,10 +38,10 @@
 
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link text-light" href="{{ route('rutainicio') }}">Inicio</a>
+                        <a class="nav-link text-light" href="{{ route('rutainicio') }}"> {{ __('Inicio') }} </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="{{ route('rutaregistro') }}">Registrar libro</a>
+                        <a class="nav-link text-light" href="{{ route('rutaregistro') }}"> {{ __('Registrar libro') }} </a>
                     </li>
 
                 </ul>
