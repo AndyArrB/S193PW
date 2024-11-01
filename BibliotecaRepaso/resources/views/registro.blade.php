@@ -11,6 +11,17 @@
     <div class="container d-flex justify-content-center mt-5">
         <div class="card p-4 shadow" style="max-width: 500px; width: 100%;">
 
+            @if (session('exito'))
+            <script>
+                Swal.fire({
+                    title: "Buen trabajo!",
+                    text: '{{ session('exito') }}',
+                    icon: "success"
+                });
+            </script> 
+        @endif
+    
+    
             <form action="{{ route('guardarLibro') }}" method="POST">
                 @csrf
 
@@ -18,7 +29,7 @@
                 <div class="mb-3">
                     <label for="isbn" class="form-label">{{ __('ISBN') }}</label>
                     <input type="text" class="form-control @error('isbn') is-invalid @enderror" id="isbn"
-                        name="isbn" value="{{ old('isbn') }}" maxlength="13" pattern="\d{13}" required>
+                        name="isbn" value="{{ old('isbn') }}"  >
                     @error('isbn')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
@@ -28,7 +39,7 @@
                 <div class="mb-3">
                     <label for="titulo" class="form-label">{{ __('Titulo') }}</label>
                     <input type="text" class="form-control @error('titulo') is-invalid @enderror" id="titulo"
-                        name="titulo" value="{{ old('titulo') }}" maxlength="150" required>
+                        name="titulo" value="{{ old('titulo') }}"  >
                     @error('titulo')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
@@ -37,15 +48,18 @@
                 <!-- Autor -->
                 <div class="mb-3">
                     <label for="autor" class="form-label">{{ __('Autor') }}</label>
-                    <input type="text" class="form-control" id="autor" name="autor" value="{{ old('autor') }}"
-                        required>
+                    <input type="text" class="form-control @error('autor') is-invalid @enderror" id="autor" name="autor" value="{{ old('autor') }}"
+                       >
+                       @error('autor')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
                 </div>
 
                 <!-- Páginas -->
                 <div class="mb-3">
                     <label for="paginas" class="form-label">{{ __('Páginas') }}</label>
                     <input type="number" class="form-control @error('paginas') is-invalid @enderror" id="paginas"
-                        name="paginas" value="{{ old('paginas') }}" min="1" required>
+                        name="paginas" value="{{ old('paginas') }}" >
                     @error('paginas')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
@@ -55,7 +69,7 @@
                 <div class="mb-3">
                     <label for="año" class="form-label">{{ __('Año') }}</label>
                     <input type="number" class="form-control @error('año') is-invalid @enderror" id="anio"
-                        name="año" value="{{ old('año') }}" min="1000" max="{{ date('Y') }}" required>
+                        name="año" value="{{ old('año') }}" >
                     @error('año')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
@@ -64,15 +78,18 @@
                 <!-- Editorial -->
                 <div class="mb-3">
                     <label for="editorial" class="form-label">{{ __('Editorial') }}</label>
-                    <input type="text" class="form-control" id="editorial" name="editorial"
-                        value="{{ old('editorial') }}" required>
+                    <input type="text" class="form-control @error('editorial') is-invalid @enderror" id="editorial" name="editorial"
+                        value="{{ old('editorial') }}" >
+                        @error('editorial')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
                 </div>
 
                 <!-- Email de Editorial -->
                 <div class="mb-3">
                     <label for="email_editorial" class="form-label">{{ __('Email de Editorial') }}</label>
                     <input type="email" class="form-control @error('email_editorial') is-invalid @enderror"
-                        id="email_editorial" name="email_editorial" value="{{ old('email_editorial') }}" required>
+                        id="email_editorial" name="email_editorial" value="{{ old('email_editorial') }}" >
                     @error('email_editorial')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
@@ -85,15 +102,6 @@
 
     </div>
 
-    @if (session('success'))
-        <script>
-            Swal.fire({
-                title: '¡Todo correcto!',
-                text: "{{ session('success') }}",
-                icon: 'success',
-                confirmButtonText: 'OK'
-            });
-        </script>
-    @endif
+    
 
 @endsection

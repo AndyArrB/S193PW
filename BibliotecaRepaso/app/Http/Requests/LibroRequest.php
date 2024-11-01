@@ -16,10 +16,10 @@ class LibroRequest extends FormRequest
         return [
             'isbn' => 'required|digits:13',
             'titulo' => 'required|string|max:150',
-            'autor' => 'required|string',
+            'autor' => 'required|string|min:5',
             'paginas' => 'required|integer|min:1',
             'año' => 'required|integer|min:1000|max:' . date('Y'),
-            'editorial' => 'required|string',
+            'editorial' => 'required|string|min:5',
             'email_editorial' => 'required|email',
         ];
     }

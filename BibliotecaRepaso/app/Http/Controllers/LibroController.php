@@ -6,19 +6,15 @@ use Illuminate\Http\Request;
 
 class LibroController extends Controller
 {
-    
-    public function crear()
-    {
-        return view('registro');
-    }
-
+  
     
     public function libro(LibroRequest $request)
     {
        
         $titulo = $request->input('titulo');
-        
-        return redirect()->route('rutaregistro')->with('success', "Libro '{$titulo}' guardado");
+        session()->flash('exito','Se guardó el libro: ' .$titulo);
+        return to_route('rutaregistro');
+ 
     }
 
 
