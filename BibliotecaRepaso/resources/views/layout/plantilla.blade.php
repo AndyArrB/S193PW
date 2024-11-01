@@ -16,6 +16,10 @@
         @yield('content')
     </div>
 
+    <div class="contentBook">
+        @yield('contentBook')
+    </div>
+
     <!-- Pie de página -->
     @include('layout.footer')
 

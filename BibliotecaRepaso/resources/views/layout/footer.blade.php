@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('titulo')</title>
     @vite(['resources/js/app.js'])
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <style>
         
@@ -36,6 +37,8 @@
             <p class="mb-1"> {{ __('Biblioteca de Andy') }} </p>
             <p class="mb-1">© {{ date('Y') }} {{ __('Todos los derechos reservados') }} </p>
             <p class="mb-1"> {{ date('d') }} {{ date('F') }} {{ date('Y') }}</p>
+            {{-- Date (D) muestra el día del mes, luego Date(F) muestra el nombre del mes y finalmente el date(Y)
+                muestra el año. --}}
         </div>
     </footer>
 </body>

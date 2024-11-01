@@ -52,6 +52,17 @@
     "Noticia literaria":"Literary news",
     "Los robots están dominando al mundo, de acuerdo a fuentes de la BBC se reportan casos de que los robots comienzan a reemplazar a los humanos en las actividades de su vida cotidiana":"Robots are taking over the world, according to BBC, there are reports of robots starting to replace humans in their daily life activities.",
     "Biblioteca de Andy":"Andy's Library",
-    "Todos los derechos reservados":"All rights reserved"
+    "Todos los derechos reservados":"All rights reserved",
+    "Registro de libro":"Book Register",
+    "ISBN": "ISBN",
+    "Titulo": "Title",
+    "Autor": "Author",
+    "Páginas": "Pages",
+    "Año": "Year",
+    "Editorial": "Publisher",
+    "Email de Editorial": "Publisher Email",
+    "Guardar libro": "Save Book",
+    "¡Todo correcto!": "All Good!",
+    "Tu libro ha sido guardado exitosamente.": "Your book has been saved successfully."
     
 }
