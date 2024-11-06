@@ -12,16 +12,6 @@
     <h1>Registro de prendas</h1><br>
 
 
-    @if (@session('benditoseadios'))
-    <script> Swal.fire({
-        title: "Respuesta",
-        text: "Se guardó: ",
-        icon: "Tu muy bien"
-      }); </script> 
-        
-        
-    @endif
-
     <form action="/procesar" method="GET">
         <label for="prenda">Prenda:</label>
         <input type="text"name="prenda"><br><br>
@@ -37,5 +27,17 @@
         
         <button type="submit"> Guardar prenda </button>
     </form>
+
+    @session('benditoseadios')
+    <script> Swal.fire({
+        title: "Respuesta",
+        text: "{{$value}}",
+        icon: "Tu muy bien"
+      }); </script> 
+        
+    @endsession
+
+
+
 </body>
 </html>
