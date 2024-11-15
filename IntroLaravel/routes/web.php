@@ -11,8 +11,6 @@ Route::get('/', [ControladorVistas::class, 'home'])->name('rutainicio');
 
 Route::get('/consultar', [ControladorVistas::class, 'consulta'])->name('rutaclientes');
 
-Route::post('/enviarCliente', [ControladorVistas::class, 'procesarCliente'])->name('rutaEnviar');
-
 /*  Route::get('/', function () {
     return view('inicio');
 })->name('rutainicio');
@@ -35,4 +33,11 @@ Route::view('/component', 'componentes');
 
 /* rutas para cliente controlador */
 
+/* para mostrar el formulario */
 Route::get('/cliente/create', [clienteController::class, 'create'])->name('rutaform');
+
+/* para hacer un insert en la bd del formulario */
+Route::post('/cliente', [clienteController::class, 'store'])->name('rutaEnviar');
+
+/* para mostrar a los clientes */
+Route::get('/cliente', [clienteController::class, 'index'])->name('rutaclientes');

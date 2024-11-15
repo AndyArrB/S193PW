@@ -5,15 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
+use App\Http\Requests\validadorCliente;
 
 class clienteController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the resource. Osea que aquí va la consulta
      */
     public function index()
     {
-        //
+        $consultaclientes = DB::table('clientes')->get();
+        return view('clientes', compact('consultaclientes'));
     }
 
     /**
@@ -27,7 +29,7 @@ class clienteController extends Controller
     /**
      * Store a newly created resource in storage. Osea hago el insert
      */
-    public function store(Request $request)
+    public function store(validadorCliente $request)
     {
         DB::table('clientes')->insert([
             "nombre"=>$request->input('txtnombre'),
@@ -37,6 +39,13 @@ class clienteController extends Controller
             "created_at"=> Carbon::now(),
             "updated_at"=>Carbon::now()
         ]);
+
+        /* aqui le decimos que queremos guardar el nombre que se ingrese que viene del txtnombre */
+        $usuario=$request->input('txtnombre');
+        
+        /* aqui creamos la sesion donde si es un exito, enviará el mensaje de que se guardo el usuario */
+        session()->flash('exito','Se guardó el usuario: '.$usuario);
+        return to_route('rutaform');
         
     }
 

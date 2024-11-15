@@ -3,14 +3,19 @@
 @section('clientesconsultados')
     {{-- Inicia tarjeta de cliente --}}
     <div class="container mt-5 col-md md-8">
-        <div class="card text-justify font-monospace">
+
+        {{-- aqui vamos a iterar la consulta, es decir cada que de una vuelta nos dará un cliente diferente --}}
+        @foreach ($consultaclientes as $cliente)
+            
+
+        <div class="container mt-5 col-md md-8 card text-justify font-monospace mt-4">
             <div class="card-header fs-5 text-primary">
-                Andrea Arredondo Balderas
+                {{ $cliente->nombre }}
             </div>
 
             <div class="card-body">
-                <h5 class="fw-bold"> andrea.arredondo@outlook.com </h5>
-                <h5 class="fw-medium"> 4422641001 </h5>
+                <h5 class="fw-bold"> {{ $cliente->correo }} </h5>
+                <h5 class="fw-medium"> {{ $cliente->telefono}} </h5>
                 <p class="card-text fw-lighter"> </p>
             </div>
 
@@ -20,5 +25,9 @@
             </div>
         </div>
     </div>
+    @endforeach
     {{-- Finaliza tarjeta de cliente --}}
+
+
+
     @endsection
