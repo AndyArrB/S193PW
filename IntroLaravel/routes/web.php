@@ -41,3 +41,7 @@ Route::post('/cliente', [clienteController::class, 'store'])->name('rutaEnviar')
 
 /* para mostrar a los clientes */
 Route::get('/cliente', [clienteController::class, 'index'])->name('rutaclientes');
+
+Route::get('/cliente/actualizar', [clienteController::class, 'edit'])->name('rutaactualizar');
+
+Route::post('/clientes', [clienteController::class, 'update'])->name('rutaUpdate');

@@ -38,6 +38,8 @@
 
     @yield('contenido')
 
+    @yield('contenidoactualizar')
+
     @yield('clientesconsultados')
 
 </body>

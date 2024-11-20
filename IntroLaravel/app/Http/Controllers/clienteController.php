@@ -58,26 +58,38 @@ class clienteController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Show the form for editing the specified resource. aqui mando para el formulario de editar
      */
-    public function edit(string $id)
+    public function edit($request)
     {
-        //
+        $id=$request->query('id');
+        return view('formularioactualizar');
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(validadorCliente $request)
     {
-        //
+       DB::table('clientes')->where('id', '=', $request->input('txtid'))->update([
+            "nombre"=>$request->input('txtnombre'),
+            "apellido"=>$request->input('txtapellido'),
+            "correo"=>$request->input('txtcorreo'),
+            "telefono"=>$request->input('txttelefono'),
+            "created_at"=> Carbon::now(),
+            "updated_at"=>Carbon::now()
+        ]);
+
+        return to_route('rutaclientes');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy()
     {
-        //
+        DB::table('clientes')->delete([$id]);
+
+        return to_route('rutaclientes');
     }
 }
