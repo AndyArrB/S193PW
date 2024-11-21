@@ -60,36 +60,36 @@ class clienteController extends Controller
     /**
      * Show the form for editing the specified resource. aqui mando para el formulario de editar
      */
-    public function edit($request)
+    public function edit($id)
     {
-        $id=$request->query('id');
-        return view('formularioactualizar');
+        $cliente = DB::table('clientes')->where('id', $id)->first();
+        return view('formularioactualizar', compact('cliente'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(validadorCliente $request)
+    public function update(validadorCliente $request, $id)
     {
-       DB::table('clientes')->where('id', '=', $request->input('txtid'))->update([
-            "nombre"=>$request->input('txtnombre'),
-            "apellido"=>$request->input('txtapellido'),
-            "correo"=>$request->input('txtcorreo'),
-            "telefono"=>$request->input('txttelefono'),
-            "created_at"=> Carbon::now(),
-            "updated_at"=>Carbon::now()
+        DB::table('clientes')->where('id', $id)->update([
+            "nombre" => $request->input('txtnombre'),
+            "apellido" => $request->input('txtapellido'),
+            "correo" => $request->input('txtcorreo'),
+            "telefono" => $request->input('txttelefono'),
+            "updated_at" => Carbon::now()
         ]);
-
-        return to_route('rutaclientes');
+    
+        return redirect()->route('rutaclientes')->with('benditodios', 'Los datos se actualizaron de manera exitosa');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy()
+    public function destroy($id)
     {
-        DB::table('clientes')->delete([$id]);
+        DB::table('clientes')->where('id', $id)->delete();
 
-        return to_route('rutaclientes');
+        return redirect()->route('rutaclientes')->with('funadote', 'Se eliminó al cliente de manera exitosa.');
+    
     }
 }

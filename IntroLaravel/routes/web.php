@@ -42,6 +42,11 @@ Route::post('/cliente', [clienteController::class, 'store'])->name('rutaEnviar')
 /* para mostrar a los clientes */
 Route::get('/cliente', [clienteController::class, 'index'])->name('rutaclientes');
 
-Route::get('/cliente/actualizar', [clienteController::class, 'edit'])->name('rutaactualizar');
+/* para mandar al form de actualizar */
+Route::get('/cliente/actualizar/{id}', [clienteController::class, 'edit'])->name('rutaactualizar');
 
-Route::post('/clientes', [clienteController::class, 'update'])->name('rutaUpdate');
+/* para ejecutar la actualizacion */
+Route::post('/cliente/actualizar/{id}', [clienteController::class, 'update'])->name('rutaUpdate');
+
+/* para eliminar el dato seleccionado */
+Route::delete('/cliente/{id}', [clienteController::class, 'destroy'])->name('rutaEliminar');
