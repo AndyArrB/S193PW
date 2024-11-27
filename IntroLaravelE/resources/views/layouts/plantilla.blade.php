@@ -24,11 +24,11 @@
                 <ul class="navbar-nav">
 
                     <li class="nav-item">
-                        <a href="{{route('rutaform')}}" class="nav-link {{request()->routeIs('rutaform')?'text-warning':''}}" aria-current="page"> {{ __('Registro clientes') }} </a>
+                        <a href="{{route('cliente.create')}}" class="nav-link {{request()->routeIs('rutaform')?'text-warning':''}}" aria-current="page"> {{ __('Registro clientes') }} </a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="{{route('rutaclientes')}}" class="nav-link {{request()->routeIs('rutaclientes')?'text-success':''}}">{{ __('Consulta clientes') }}</a>
+                        <a href="{{route('cliente.index')}}" class="nav-link {{request()->routeIs('rutaclientes')?'text-success':''}}">{{ __('Consulta clientes') }}</a>
                     </li>
                 </ul>
             </div>

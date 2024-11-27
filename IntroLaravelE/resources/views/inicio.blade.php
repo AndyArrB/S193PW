@@ -25,7 +25,7 @@
 <p> {{ __('Presiona el botón para comenzar...') }} </p>
 
 {{-- <a href="{{ route('rutaformulario') }}" class="btn btn-primary"> Ir al registro </a> --}}
-<a href="{{route('rutaform')}}" class="btn btn-primary"> {{ __('Ir al registro') }} </a>
+<a href="{{route('cliente.create')}}" class="btn btn-primary"> {{ __('Ir al registro') }} </a>
 
 </div>
 
